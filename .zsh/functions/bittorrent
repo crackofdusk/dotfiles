@@ -5,8 +5,8 @@ bt ()
 {
     case $1 in
         start)
-            transmission-daemon --encryption-preferred --dht --portmap \\
-                --download-dir ~/downloads --no-incomplete-dir \\
+            transmission-daemon --encryption-preferred --dht --portmap \
+                --download-dir ~/downloads --no-incomplete-dir \
                 --allowed "127.0.0.*,192.168.1.*,10.0.0.*";;
         stop)
             killall transmission-daemon ;;
