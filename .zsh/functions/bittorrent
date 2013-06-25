@@ -1,0 +1,26 @@
+# vim: ft=zsh:
+
+# bittorrent shortcuts
+bt ()
+{
+    case $1 in
+        start)
+            transmission-daemon --encryption-preferred --dht --portmap \\
+                --download-dir ~/downloads --no-incomplete-dir \\
+                --allowed "127.0.0.*,192.168.1.*,10.0.0.*";;
+        stop)
+            killall transmission-daemon ;;
+        add)
+            transmission-remote --pex --add $2 ;;
+        remove)
+            transmission-remote --torrent $2 --remove ;;
+        trash)
+            transmission-remote --torrent $2 --remove-and-delete ;;
+        info)
+            transmission-remote --torrent $2 --info | less ;;
+        list)
+            watch -t -n5 transmission-remote --list ;;
+        *)
+            echo "usage: $0 {start|stop|add file|remove #|trash #|info #|list}"
+esac
+}

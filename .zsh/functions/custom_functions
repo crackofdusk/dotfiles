@@ -1,0 +1,6 @@
+# vim: ft=zsh:
+
+source "$ZDOTDIR/functions/bittorrent"
+source "$ZDOTDIR/functions/mp"
+source "$ZDOTDIR/functions/rspec"
+

@@ -1,0 +1,12 @@
+# vim: ft=zsh:
+
+mp ()
+{
+    killall redshift
+    mplayer $* 2>& /dev/null
+    # run and detach redshift
+    nohup redshift -r >& /dev/null &!
+}
+
+# Autocmplete mp the same way as mplayer
+compdef mp=mplayer

@@ -1,0 +1,35 @@
+# vim: ft=zsh:
+prompt_minimal_precmd() {
+  local branch dirty
+
+  set -g git_info
+#  set -g ruby_info
+
+  if branch="${$(git symbolic-ref -q HEAD 2>/dev/null)##refs/heads/}"; then
+    git diff --quiet || dirty=' *'
+    git_info=" %B%F{cyan}(%F{magenta}$branch%F{cyan})%F{green}$dirty%f%b"
+  else
+    unset git_info
+  fi
+
+#  if (( $+commands[ruby] )); then
+#    ruby_info="%B%F{black}$(ruby --version | cut -d' ' -f 1-2)%f%b"
+#  else
+#    unset ruby_info
+#  fi
+}
+
+prompt_minimal_setup() {
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd prompt_minimal_precmd
+
+#PROMPT='%{$fg[cyan]%}%n:%{$reset_color%}%{$fg[yellow]%}%~%{$reset_color%}$(git_prompt_info)%{$reset_color%}$ '
+
+
+  PROMPT=' %F{cyan}%~%f$git_info '
+#  RPROMPT='%(?::%B%F{red}%? %f%b)$ruby_info'
+
+  prompt_opts=( cr percent subst )
+}
+
+prompt_minimal_setup "$@"
