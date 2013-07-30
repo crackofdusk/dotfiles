@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle 'Lokaltog/powerline'
+Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'godlygeek/tabular'
@@ -32,5 +32,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/JSON.vim'
 Bundle 'programble/ooc.vim'
 Bundle 'michalbachowski/vim-wombat256mod'
+Bundle 'kshenoy/vim-signature'
 
 filetype on

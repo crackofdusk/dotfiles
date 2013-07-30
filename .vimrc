@@ -71,7 +71,7 @@ nmap <silent> <C-l> :wincmd l<CR>
 " change the working directory to the open file's directory
 " autocmd BufEnter * lcd %:p:h
 
-nmap <F4> :w<CR>:make<CR>:cw<CR>
+nmap <F4> :w<CR>:make<CR>:cw<CR><CR>
 
 let mapleader = ","
 
@@ -115,4 +115,9 @@ map <Leader>l :call RunLastSpec()<CR>
 
 " rspec + dispatch = async feedback awesomeness
 let g:rspec_command = 'Dispatch zeus rspec {spec}'
+
+"" airline (status line) configuration
+let g:airline_theme = 'badwolf'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
