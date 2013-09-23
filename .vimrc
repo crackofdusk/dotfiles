@@ -75,9 +75,6 @@ nmap <F4> :w<CR>:make<CR>:cw<CR><CR>
 
 let mapleader = ","
 
-" map jj in insert mode to <ESC>
-inoremap jj <ESC>
-
 " use j/k for line navigation even with softwrap
 noremap j gj
 nnoremap k gk
@@ -120,4 +117,3 @@ let g:rspec_command = 'Dispatch zeus rspec {spec}'
 let g:airline_theme = 'badwolf'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-
