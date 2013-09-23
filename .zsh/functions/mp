@@ -3,7 +3,7 @@
 mp ()
 {
     killall redshift
-    mplayer $* 2>& /dev/null
+    mpv $* 2>& /dev/null
     # run and detach redshift
     nohup redshift -r >& /dev/null &!
 }
