@@ -106,12 +106,12 @@ if executable('ag')
 endif
 
 " vim-rspec mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR><CR>
+map <Leader>s :call RunNearestSpec()<CR><CR>
+map <Leader>l :call RunLastSpec()<CR><CR>
 
 " rspec + dispatch = async feedback awesomeness
-let g:rspec_command = 'Dispatch zeus rspec {spec}'
+let g:rspec_command = 'Dispatch rspec {spec}'
 
 "" airline (status line) configuration
 let g:airline_theme = 'badwolf'
