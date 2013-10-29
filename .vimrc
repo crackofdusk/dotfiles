@@ -53,6 +53,10 @@ set scrolloff=5
 highlight ExtraWhitespace ctermbg=black guibg=black
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+" More discreet speeling highlighting
+highlight clear SpellBad
+highlight SpellBad cterm=underline ctermfg=red
+
 set list listchars=tab:»·,trail:·
 
 " Searching
