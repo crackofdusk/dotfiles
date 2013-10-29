@@ -68,3 +68,8 @@ bindkey '^i' expand-or-complete-prefix
 autoload -Uz promptinit && promptinit
 prompt minimal
 
+
+# Freeze the tty. This means that settings will be restored after any command
+# that changes them exits. Useful in combination with stty to change tty flow
+# control temporarily.
+ttyctl -f

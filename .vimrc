@@ -121,3 +121,17 @@ let g:rspec_command = 'Dispatch rspec {spec}'
 let g:airline_theme = 'badwolf'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+" Save with Ctrl-S
+" If the current buffer has never been saved, it will have no name, call the
+" file browser to save it (only works in GUI mode), otherwise just save it.
+command -nargs=0 -bar Update if &modified
+                           \|    if empty(bufname('%'))
+                           \|        browse confirm write
+                           \|    else
+                           \|        confirm write
+                           \|    endif
+                           \|endif
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
