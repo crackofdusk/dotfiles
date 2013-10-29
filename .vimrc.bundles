@@ -36,5 +36,6 @@ Bundle 'vim-scripts/JSON.vim'
 Bundle 'programble/ooc.vim'
 Bundle 'michalbachowski/vim-wombat256mod'
 Bundle 'kshenoy/vim-signature'
+Bundle 'tpope/vim-fugitive'
 
 filetype on
