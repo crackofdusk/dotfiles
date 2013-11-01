@@ -109,9 +109,16 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" Search for word under the cursor in the entire project
+" (requires the silver searcher (ag) plugin)
+map <Leader>s :Ag <C-R><C-W><CR>
+
+" trailing space left on purpose
+map <Leader>a :Ag! 
+
 " vim-rspec mappings
 map <Leader>t :call RunCurrentSpecFile()<CR><CR>
-map <Leader>s :call RunNearestSpec()<CR><CR>
+map <Leader>n :call RunNearestSpec()<CR><CR>
 map <Leader>l :call RunLastSpec()<CR><CR>
 
 " rspec + dispatch = async feedback awesomeness
