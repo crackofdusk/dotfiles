@@ -39,7 +39,9 @@ augroup vimrcEx
 augroup END
 
 syntax on
-colorscheme wombat256mod
+set bg=dark
+"colorscheme wombat256mod
+colorscheme gruvbox
 set cursorline
 set number
 
@@ -53,7 +55,7 @@ set scrolloff=5
 highlight ExtraWhitespace ctermbg=black guibg=black
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
-" More discreet speeling highlighting
+" More discreet spelling highlighting
 highlight clear SpellBad
 highlight SpellBad cterm=underline ctermfg=red
 
@@ -125,7 +127,7 @@ map <Leader>l :call RunLastSpec()<CR><CR>
 let g:rspec_command = 'Dispatch rspec {spec}'
 
 "" airline (status line) configuration
-let g:airline_theme = 'badwolf'
+let g:airline_theme = 'tomorrow'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
