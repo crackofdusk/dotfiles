@@ -88,6 +88,8 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+nnoremap <Leader>l :ls<CR>:b<space>
+
 " window size constraints (useful with a lot of splits)
 set winwidth=80
 set winminwidth=40
