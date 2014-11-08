@@ -56,7 +56,7 @@ alias gp='git push'
 alias gf='git fetch'
 alias gr='git rebase'
 alias gl='git l'
-alias gg='git grep'
+alias gg='git g'
 alias ga='git add'
 alias gau='git add -u'
 alias gap='git add -p'
@@ -82,7 +82,6 @@ bindkey '^i' expand-or-complete-prefix
 
 autoload -Uz promptinit && promptinit
 prompt minimal
-
 
 # Freeze the tty. This means that settings will be restored after any command
 # that changes them exits. Useful in combination with stty to change tty flow
