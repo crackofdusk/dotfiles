@@ -48,4 +48,4 @@ fi
 [[ $TTY == /dev/tty1 ]] \
   && (( $UID ))         \
   && [[ -z $DISPLAY ]]  \
-  && exec startx -nolisten tcp 2> .Xlog
+  && exec ssh-agent startx -nolisten tcp
