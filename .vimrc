@@ -120,18 +120,11 @@ map <Leader>s :Ag <C-R><C-W><CR>
 " trailing space left on purpose
 map <Leader>a :Ag! 
 
-" vim-rspec mappings
-map <Leader>t :call RunCurrentSpecFile()<CR><CR>
-map <Leader>n :call RunNearestSpec()<CR><CR>
-map <Leader>l :call RunLastSpec()<CR><CR>
-
-" rspec + dispatch = async feedback awesomeness
-let g:rspec_command = 'Dispatch rspec {spec}'
-
 "" airline (status line) configuration
 let g:airline_theme = 'tomorrow'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
 
 " Save with Ctrl-S
 " If the current buffer has never been saved, it will have no name, call the
