@@ -11,8 +11,13 @@ set expandtab
 
 set title
 
+" don't show intro message on start
+set shortmess+=I
+
 filetype plugin on
 filetype plugin indent on
+
+set autoread
 
 augroup vimrcEx
   autocmd!
@@ -104,6 +109,8 @@ set guioptions-=r
 " Disable cursor blinking in gvim
 set guicursor+=a:blinkon0
 
+set guifont=Droid\ Sans\ Mono\ Slashed\ 12
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
     " Use Ag over Grep
@@ -140,5 +147,4 @@ noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+nnoremap <c-p> :call PickFile()<CR>
