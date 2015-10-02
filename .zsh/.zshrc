@@ -11,13 +11,12 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
 
-export _JAVA_OPTIONS="-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd"
+#export _JAVA_OPTIONS="-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd"
 
 export BROWSER='chromium'
 export PAGER='less'
 
 export GREP_COLOR='1;32'
-export GREP_OPTIONS='--color=auto'
 
 [[ -x $(which highlight) ]] && export LESSOPEN="| highlight --out-format=xterm256 --quiet %s"
 export LESS='-R -w'
@@ -33,6 +32,7 @@ export ROCK_DIST=$HOME/ooc/rock
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
 
 alias ls='ls --color=auto -hF'
+alias grep='grep --color=auto'
 alias du='du -h'
 alias df='df -h'
 alias cal='cal -m'
@@ -61,6 +61,8 @@ alias ga='git add'
 alias gau='git add -u'
 alias gap='git add -p'
 alias gs='git st'
+alias gco='git checkout'
+alias ssh='TERM=linux ssh'
 
 bindkey -e
 bindkey '^[[Z' reverse-menu-complete       # Shift-Tab
