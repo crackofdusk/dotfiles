@@ -62,7 +62,7 @@ alias gau='git add -u'
 alias gap='git add -p'
 alias gs='git st'
 alias gco='git checkout'
-alias ssh='TERM=linux ssh'
+alias ssh='TERM=screen ssh'
 
 bindkey -e
 bindkey '^[[Z' reverse-menu-complete       # Shift-Tab
