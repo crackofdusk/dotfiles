@@ -1,48 +1,50 @@
-set nocompatible
+if !filereadable(expand("~/.vim/bundle/vim-plug/plug.vim"))
+    echo "Installing vim-plug..."
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/junegunn/vim-plug ~/.vim/bundle/vim-plug
+endif
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+source ~/.vim/bundle/vim-plug/plug.vim
 
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
-" Define bundles via Github repos
-Plugin 'bling/vim-airline'
-Plugin 'ervandew/supertab'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'godlygeek/tabular'
-Plugin 'danro/rename.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'thoughtbot/pick.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'jgdavey/vim-turbux'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'sunaku/vim-ruby-minitest'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'kana/vim-textobj-user'
-Plugin 'rbonvall/vim-textobj-latex'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'vim-scripts/JSON.vim'
-Plugin 'nddrylliog/ooc.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'kshenoy/vim-signature'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rking/ag.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'Townk/vim-autoclose'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-obsession'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
+" Manage vim-plug itself
+Plug 'junegunn/vim-plug'
 
-call vundle#end()
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'danro/rename.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'thoughtbot/pick.vim'
+Plug 'scrooloose/syntastic'
+Plug 'jgdavey/vim-turbux'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'sunaku/vim-ruby-minitest'
+Plug 'vim-scripts/matchit.zip'
+Plug 'kana/vim-textobj-user'
+Plug 'rbonvall/vim-textobj-latex'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'vim-scripts/ctags.vim'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/JSON.vim'
+Plug 'nddrylliog/ooc.vim'
+Plug 'morhetz/gruvbox'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-fugitive'
+Plug 'rking/ag.vim'
+Plug 'groenewege/vim-less'
+Plug 'Townk/vim-autoclose'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-obsession'
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
 
-filetype on
+" Add plugins to &runtimepath
+call plug#end()
