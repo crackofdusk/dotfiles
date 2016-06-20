@@ -3,4 +3,5 @@
 source "$ZDOTDIR/functions/bittorrent"
 source "$ZDOTDIR/functions/mp"
 source "$ZDOTDIR/functions/vim"
+source "$ZDOTDIR/functions/httpless"
 

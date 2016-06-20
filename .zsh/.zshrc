@@ -63,6 +63,7 @@ alias gap='git add -p'
 alias gs='git st'
 alias gco='git checkout'
 alias ssh='TERM=screen ssh'
+alias h='httpless'
 
 bindkey -e
 bindkey '^[[Z' reverse-menu-complete       # Shift-Tab
