@@ -87,6 +87,7 @@ nmap <silent> <C-l> :wincmd l<CR>
 nmap <F4> :w<CR>:make<CR>:cw<CR><CR>
 
 let mapleader = ","
+let maplocalleader = ","
 
 " use j/k for line navigation even with softwrap
 noremap j gj
@@ -101,7 +102,7 @@ nnoremap <Leader>l :ls<CR>:b<space>
 set winwidth=80
 set winminwidth=40
 set winheight=20
-set winminheight=10
+"set winminheight=10
 
 " Hide menu, toolbar and scrollbar in gvim
 set guioptions-=m
@@ -150,3 +151,10 @@ vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
 nnoremap <c-p> :call PickFile()<CR>
+
+" Testing
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>T :TestNearest<CR>
+"nmap <silent> <leader>a :TestSuite<CR>
+"nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
