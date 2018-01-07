@@ -32,15 +32,6 @@ if [[ -e /usr/share/chruby ]]; then
   source /usr/share/chruby/auto.sh
 fi
 
-if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    source /usr/bin/virtualenvwrapper.sh
-
-    if [[ -e $HOME/.autoenv ]]; then
-        source $HOME/.autoenv/activate.sh
-    fi
-fi
-
 # password-containing environment variables
 [[ -r "$HOME/.secrets" ]] && source "$HOME/.secrets"
 
