@@ -160,3 +160,7 @@ nmap <silent> <leader>T :TestNearest<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
 set formatoptions+=j
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '●'
+let g:ale_lint_on_enter = 0
