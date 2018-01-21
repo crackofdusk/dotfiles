@@ -81,11 +81,6 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
-" change the working directory to the open file's directory
-" autocmd BufEnter * lcd %:p:h
-
-nmap <F4> :w<CR>:make<CR>:cw<CR><CR>
-
 let mapleader = ","
 let maplocalleader = ","
 
@@ -118,9 +113,6 @@ set guifont=Droid\ Sans\ Mono\ Slashed\ 12
 if executable('ag')
     " Use Ag over Grep
     set grepprg=ag\ --nogroup\ --nocolor
-
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " Search for word under the cursor in the entire project
