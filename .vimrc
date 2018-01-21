@@ -38,7 +38,6 @@ augroup END
 
 syntax on
 set bg=dark
-"colorscheme wombat256mod
 colorscheme gruvbox
 set cursorline
 set number
