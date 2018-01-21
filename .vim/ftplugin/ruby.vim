@@ -6,3 +6,5 @@ set textwidth=80
 function! RunCurrentRubyFile()
     echo system("ruby " . bufname("%"))
 endfunction
+
+noremap <leader>r :exec RunCurrentRubyFile()<cr>
