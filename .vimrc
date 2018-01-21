@@ -112,12 +112,6 @@ map <Leader>s :Ag <C-R><C-W><CR>
 " trailing space left on purpose
 map <Leader>a :Ag! 
 
-"" airline (status line) configuration
-let g:airline_theme = 'tomorrow'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
-
 " Save with Ctrl-S
 " If the current buffer has never been saved, it will have no name, call the
 " file browser to save it (only works in GUI mode), otherwise just save it.
@@ -131,6 +125,7 @@ command -nargs=0 -bar Update if &modified
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
+
 
 nnoremap <c-p> :call PickFile()<CR>
 
@@ -146,3 +141,6 @@ set formatoptions+=j
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '●'
 let g:ale_lint_on_enter = 0
+
+set laststatus=2
+set statusline=\ %f\ %m%=(%{&ft})\ %(%3l/%L\ :\ %-2c\ %)

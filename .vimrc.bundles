@@ -11,8 +11,6 @@ call plug#begin('~/.vim/bundle')
 " Manage vim-plug itself
 Plug 'junegunn/vim-plug'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
 Plug 'danro/rename.vim'
 Plug 'kchmck/vim-coffee-script'
