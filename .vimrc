@@ -127,6 +127,7 @@ vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
 
+let g:pick_height = 10
 nnoremap <c-p> :call PickFile()<CR>
 
 " Testing
