@@ -23,9 +23,6 @@ export LESS='-R -w'
 
 export MANWIDTH=80
 
-export OOC_LIBS=$HOME/ooc
-export ROCK_DIST=$HOME/ooc/rock
-
 export ANDROID_HOME=/opt/android-sdk
 
 # don't jump over entire /path/to/file, but from word to word separated by /

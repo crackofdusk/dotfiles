@@ -1,24 +1,13 @@
-typeset -gU fpath cdpath manpath path
+typeset -gU fpath manpath
 
 fpath=(
   "$ZDOTDIR/functions"
   $fpath
 )
 
-cdpath=(
-  #"$HOME/code"
-  $cdpath
-)
-
 manpath=(
   /usr/local/share/man
   $manpath
-)
-
-path=(
-  "$HOME/ooc/rock/bin"
-  "$HOME/ooc/sam"
-  $path
 )
 
 export LC_ALL=en_US.UTF-8
