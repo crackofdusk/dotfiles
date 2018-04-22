@@ -65,6 +65,9 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+" Re-balance pane sizes when the host window is resized
+autocmd VimResized * wincmd =
+
 " easy switching between window splits
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-j> :wincmd j<CR>
