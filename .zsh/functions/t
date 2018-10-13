@@ -1,0 +1,10 @@
+# vim: ft=zsh:
+
+t ()
+{
+    if [[ -x 'bin/test' ]]; then
+        bin/test
+    else
+        bundle exec rake
+    fi
+}
