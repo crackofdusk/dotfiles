@@ -74,6 +74,9 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
+set splitbelow
+set splitright
+
 let mapleader = ","
 let maplocalleader = ","
 
