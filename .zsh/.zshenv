@@ -1,4 +1,4 @@
-typeset -gU fpath manpath
+typeset -gU fpath manpath path
 
 fpath=(
   "$ZDOTDIR/functions"
@@ -8,6 +8,12 @@ fpath=(
 manpath=(
   /usr/local/share/man
   $manpath
+)
+
+path=(
+  "$HOME/.cargo/bin"
+  "$HOME/.yarn/bin"
+  $path
 )
 
 export LC_ALL=en_US.UTF-8
