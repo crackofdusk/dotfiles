@@ -34,6 +34,7 @@ Plug 'rking/ag.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'ElmCast/elm-vim'
+Plug 'elixir-editors/vim-elixir'
 
 " Add plugins to &runtimepath
 call plug#end()
