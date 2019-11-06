@@ -7,8 +7,8 @@ endif
 " save swap files in a custom location
 set directory=~/.vim/swap
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set title
