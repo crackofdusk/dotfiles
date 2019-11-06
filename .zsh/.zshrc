@@ -59,6 +59,7 @@ alias gs='git st'
 alias gco='git checkout'
 alias ssh='TERM=screen ssh'
 alias h='httpless'
+alias pr='open-pr'
 
 bindkey -e
 bindkey '^[[Z' reverse-menu-complete       # Shift-Tab
