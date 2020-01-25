@@ -1,7 +1,3 @@
-set number
-
-setlocal makeprg=jshint\ %
-setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m
-
-set tabstop=2
-set shiftwidth=2
+let g:ale_linters = { 'javascript': [] }
+let g:ale_fixers = { 'javascript': ['prettier'] }
+let g:ale_fix_on_save = 1
