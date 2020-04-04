@@ -151,3 +151,20 @@ let g:ale_lint_on_enter = 0
 
 set laststatus=2
 set statusline=\ %f\ %m%=(%{&ft})\ %(%3l/%L\ :\ %-2c\ %)
+
+
+" Run a given vim command on the results of alt from a given path.
+" See usage below.
+function! AltCommand(path, vim_command)
+  let l:alternate = system("alt " . a:path)
+  if empty(l:alternate)
+    echo "No alternate file for " . a:path . " exists!"
+  else
+    exec a:vim_command . " " . l:alternate
+  endif
+endfunction
+
+" Find the alternate file for the current path and open it
+command A :call AltCommand(expand('%'), ':e')
+command AS :call AltCommand(expand('%'), ':sp')
+command AV :call AltCommand(expand('%'), ':vs')
