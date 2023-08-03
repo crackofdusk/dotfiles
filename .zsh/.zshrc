@@ -13,7 +13,6 @@ setopt HIST_REDUCE_BLANKS
 
 #export _JAVA_OPTIONS="-Dswing.aatext=true -Dawt.useSystemAAFontSettings=lcd"
 
-export BROWSER='chromium'
 export PAGER='less'
 
 export GREP_COLOR='1;32'
