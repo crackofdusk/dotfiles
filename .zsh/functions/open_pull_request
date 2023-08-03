@@ -14,7 +14,7 @@ _build_url() {
   repo="$(_get_repo "$origin")"
   pr_url="https://github.com/$repo/pull/new"
   target="$1"
-  test -z "$target" && target="master"
+  test -z "$target" && target="main"
   if [ -z "$upstream" ]; then
     echo "$pr_url/$target...$branch"
   else
