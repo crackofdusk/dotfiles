@@ -3,6 +3,8 @@ set nocompatible
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
+packadd! matchit
+
 
 " save swap files in a custom location
 set directory=~/.vim/swap
@@ -36,10 +38,11 @@ augroup vimrcEx
     \ endif
 augroup END
 
-syntax on
+syntax enable
 set bg=dark
-colorscheme gruvbox
+colorscheme retrobox
 set cursorline
+
 set number
 
 " I don't use folding
