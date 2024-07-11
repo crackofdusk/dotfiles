@@ -24,4 +24,3 @@
 [gist]
   private = yes
 [init]
-  templatedir = ~/.git_template
