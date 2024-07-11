@@ -1,28 +1,27 @@
 [user]
-	email = crackofdusk@gmail.com
-	name = Dimiter Petrov
+  email = crackofdusk@gmail.com
+  name = Dimiter Petrov
 [color]
-	diff = always
-	ui = true
+  diff = always
+  ui = true
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 
 [alias]
-    l = "!git log --abbrev-commit --date=short --pretty=format:'%x00%h%x00%cd%x00%s%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m \\033[32m%s\\033[0m  %-80s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, $3, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$4), $5, $6 }' | less -R"
-	st = status -sb
-	g = grep --break --heading --line-number
+  l = "!git log --abbrev-commit --date=short --pretty=format:'%x00%h%x00%cd%x00%s%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m \\033[32m%s\\033[0m  %-80s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, $3, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$4), $5, $6 }' | less -R"
+  st = status -sb
+  g = grep --break --heading --line-number
   recent = branch --sort=-committerdate
 [push]
-	default = simple
-
+  default = simple
 [grep]
-    lineNumber = true
+  lineNumber = true
 [core]
-	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = ~/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [github]
-	user = crackofdusk
+  user = crackofdusk
 [gist]
-	private = yes
+  private = yes
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
