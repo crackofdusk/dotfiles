@@ -1,10 +1,58 @@
 set nocompatible
 
-if filereadable(expand("~/.vimrc.bundles"))
-    source ~/.vimrc.bundles
+if !filereadable(expand("~/.vim/bundle/vim-plug/plug.vim"))
+    echo "Installing vim-plug..."
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/junegunn/vim-plug.git ~/.vim/bundle/vim-plug
 endif
-packadd! matchit
 
+source ~/.vim/bundle/vim-plug/plug.vim
+
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release --locked
+    else
+      !cargo build --release --locked --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
+call plug#begin('~/.vim/bundle')
+
+" Manage vim-plug itself
+Plug 'junegunn/vim-plug'
+
+Plug 'ervandew/supertab'
+Plug 'danro/rename.vim'
+Plug 'calleerlandsson/pick.vim'
+Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
+Plug 'rhysd/vim-lsp-ale'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'sunaku/vim-ruby-minitest'
+Plug 'kana/vim-textobj-user'
+Plug 'rbonvall/vim-textobj-latex'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'othree/html5.vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-fugitive'
+Plug 'rking/ag.vim'
+Plug 'cohama/lexima.vim'
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+
+" Add plugins to &runtimepath
+call plug#end()
+
+packadd! matchit
 
 " save swap files in a custom location
 set directory=~/.vim/swap
@@ -23,6 +71,7 @@ filetype plugin indent on
 
 set autoread
 
+" Settings per file type
 augroup vimrcEx
   autocmd!
 
@@ -36,7 +85,18 @@ augroup vimrcEx
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd FileType markdown setlocal spell
+
+  autocmd FileType ruby,haml,eruby,yaml,html set textwidth=80
+
+  autocmd Filetype ruby noremap <leader>r :exec RunCurrentRubyFile()<cr>
 augroup END
+
+function! RunCurrentRubyFile()
+    echo system("ruby " . bufname("%"))
+endfunction
 
 syntax enable
 set bg=dark
@@ -148,9 +208,14 @@ nmap <silent> <leader>g :TestVisit<CR>
 
 set formatoptions+=j
 
+" Vim ALE configuration
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '●'
 let g:ale_lint_on_enter = 0
+let g:ale_linters = { 'javascript': [] }
+let g:ale_fixers = { 'javascript': ['prettier'] }
+let g:ale_fixers={'typescript': ['deno', 'prettier'], 'typescriptreact': ['prettier']}
+let g:ale_fix_on_save = 1
 
 set laststatus=2
 set statusline=\ %f\ %m%=(%{&ft})\ %(%3l/%L\ :\ %-2c\ %)
