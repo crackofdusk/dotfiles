@@ -16,6 +16,7 @@
   recent = branch --sort=-committerdate
 [push]
   default = simple
+  autoSetupRemote = true
 [grep]
   lineNumber = true
 [core]
